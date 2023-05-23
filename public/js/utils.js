@@ -98,10 +98,11 @@ const redireccion = () =>{
 //Manjo de datos
 const guardarUsuario = (datos) =>{
     fetch('http://localhost:4000/api/auth/new',{
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(datos)
-
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(datos), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
     })
     .then(response => response.json())
     .then(data => {
