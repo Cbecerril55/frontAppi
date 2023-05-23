@@ -1,7 +1,9 @@
 //Variables globales
 const urlDestinoPlaces = "http://localhost:4000/places.html";
 
-const urlDestinoListPlaces = "http://localhost:4000/listPlaces.html"; //cambiar por proxima pagina principal
+const urlDestinoListPlaces = "http://localhost:4000/"; //cambiar por proxima pagina principal
+
+
 
 //validar Formularios
 
@@ -44,24 +46,48 @@ const validarFormulario= () => {
 //login
 const guardarFormulario = () => {
     let datosFormulario = {
-        name: document.querySelector('#sign-in-name').value,
-        phone: document.querySelector('#sign-in-tel').value,
-        password: document.querySelector("#sing-in-pass").value
-        
+      phone: document.querySelector('#login-tel').value,
+      password: document.querySelector("#login-pass").value
     };
-}
-
-const guardatBtn = () => {
+    return datosFormulario;
+  }
+  
+  const guardarBtn = () => {
     let $formulario = document.querySelector('#btn-Login');
-    $formulario.onclick = function boton(){
-
-        let login_valido = validarFormulario();
-        if (login_valido) {
-            const temp = guardarFormulario();
-            console.log(temp);   
-        }
+    $formulario.onclick = function boton() {
+      let login_valido = validarFormulario();
+      if (login_valido) {
+        const temp = guardarFormulario();
+        console.log(temp);
+        realizarSolicitudGet();
+      }
     }
-}
+  }
+  
+  const realizarSolicitudGet = () => {
+    const id = '1'; // Reemplaza con el ID correspondiente
+    const url = `http://localhost:4000/user/${id}`;
+  
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Manejar la respuesta de la solicitud GET
+        console.log('Respuesta:', data);
+      })
+      .catch(error => {
+        // Manejar cualquier error de la solicitud GET
+        console.error('Error:', error);
+      });
+  }
+  
+  // Llamar a la función para guardar el formulario y realizar la solicitud GET
+  guardarBtn();
+  
 
 
 //sign-in
@@ -91,7 +117,10 @@ const guardarBtnSignIn = () =>{
 }
 
 //Redirecciones
-const redireccion = () =>{
+function redireccion(){
+    window.location.href = urlDestinoPlaces;
+}
+function redireccion2(){
     window.location.href = urlDestinoListPlaces;
 }
 
