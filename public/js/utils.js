@@ -97,11 +97,24 @@ const redireccion = () =>{
 
 //Manjo de datos
 const guardarUsuario = (datos) =>{
-    fetch('http://localhost:4000/api/auth/new',{
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(datos)
 
+    datos['age'] = "23"
+
+    const data = {
+        "name": "Ejemplo 1",
+        "phone": "9984947281",
+        "password": "1234567",
+        "img": "123",
+        "age": "23",
+        "owner": 1
+    }
+
+    fetch('http://localhost:4000/api/auth/new',{
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(datos), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
     })
     .then(response => response.json())
     .then(data => {
