@@ -1,0 +1,22 @@
+{
+  "name": "frontappi",
+  "version": "1.0.0",
+  "description": "Pagina Web de la Aplicacion movil SpotFinder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cbecerril55/frontAppi.git"
+  },
+  "author": "CarlosBecerril",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cbecerril55/frontAppi/issues"
+  },
+  "homepage": "https://github.com/Cbecerril55/frontAppi#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
