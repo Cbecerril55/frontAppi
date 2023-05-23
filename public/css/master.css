@@ -20,7 +20,7 @@
     border-radius:  0 1rem 1rem 0 ;
 }
 #places{
-    background-image: url(./img/alta.webp);
+    background-image: url('../img/alta.webp');
     background-repeat: round;
 }
 .paddingLeft{
