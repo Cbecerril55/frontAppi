@@ -2,8 +2,9 @@
   "name": "frontappi",
   "version": "1.0.0",
   "description": "Pagina Web de la Aplicacion movil SpotFinder",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
