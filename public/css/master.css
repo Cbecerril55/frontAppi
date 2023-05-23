@@ -26,3 +26,12 @@
 .paddingLeft{
     padding-left: 1rem !important;
 }
+#sec-index{
+    color: #fff;
+    height: 100vh;
+    background-image: url('../img/alta.webp');
+    background-image: 100vh;
+}
+#sec-index .col{
+    height: 90vh;
+}
